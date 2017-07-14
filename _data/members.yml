@@ -1,0 +1,14 @@
+- handle:       MrGlass
+  twitter:      MisterGlass
+  github:       MisterGlass
+  image:        TBD
+  talks:
+      - title:  Hacking websockets with socketpuppet
+        where:  BsidesLV 2013
+        link:   https://www.youtube.com/watch?v=_3jtE7vQ6n8
+
+- handle: RX
+  twitter:      TBD
+  github:       TBD
+  image:        TBD
+  talks: ~
