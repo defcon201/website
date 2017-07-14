@@ -1,7 +1,7 @@
 - handle:       MrGlass
   twitter:      MisterGlass
   github:       MisterGlass
-  image:        TBD
+  image:        https://github.com/misterglass.png
   talks:
       - title:  Hacking websockets with socketpuppet
         where:  BsidesLV 2013
