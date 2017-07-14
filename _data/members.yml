@@ -18,3 +18,9 @@
   github:       heavhacker
   image: ~
   talks: ~
+
+- handle: Spam
+  twitter:      @sirspamsalot
+  github:       ~
+  image:        https://pbs.twimg.com/profile_images/449268782653906945/9UYrm_1U_400x400.png
+  talks: ~
