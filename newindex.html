@@ -1,14 +1,34 @@
 <html>
 
 	<head>
-	
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>	
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="defcon201.css">
 		<link rel="stylesheet" type="text/css" href="slick/slick.css">
 		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
 
 		<script>
+
+			function buildMeetSlides( eventList ) {
+
+				//
+			}
+
+			function pullMeetups( data ) {
+
+				var defconMeetups = [];
+
+				_.each( data.results, function( evt ) {
+
+					if ( evt.description.toLowerCase().indexOf( "defcon" ) != -1 )
+						defconMeetups.push( evt );
+				} );
+
+				buildMeetSlides( defconMeetups );
+			}
 
 			$( document ).ready( function() {
 
@@ -23,24 +43,33 @@
 					fade: false,
 					autoplaySpeed: 5000
 				} );
+
+				$( "#faq" ).accordion();
+
 			} );	
 
 		</script>
+		<script type="text/javascript" src="https://api.meetup.com/2/events?&sign=true&photo-host=public&group_id=3177432&callback=pullMeetups"></script>
 	</head>
 
 	<body>
 
+		<ul id="nav">
+			<li> <a href="#info"> Info </a> </li>
+			<li> <a href="#faq"> FAQ </a> </li>
+			<li> <a href="#contact"> Contact </a> </li>
+			<li> <a href="#affiliates"> Affiliates </a> </li>
+			<li> <a href="#members"> Members </a> </li>
+		</ul>
+
 		<div id="body_col">
 
-			<ul id="nav">
-				<li> <a href="#info"> Info </a> </li>
-				<li> <a href="#faq"> FAQ </a> </li>
-				<li> <a href="#contact"> Contact </a> </li>
-				<li> <a href="#affiliates"> Affiliates </a> </li>
-				<li> <a href="#members"> Members </a> </li>
-			</ul>
-
 			<div id="thecarousel">
+
+				<div class="bannerslide">
+
+					
+				</div>
 
 				<div class="welcome">
 
@@ -113,16 +142,42 @@
 
 			<h3> Directions </h3>
 
-			<h1> FAQ </h1>
 
-			<ul>
-				<li> <a href=""> ddd </a> </li>
-				<li> <a href=""> ddd </a> </li>
-				<li> <a href=""> ddd </a> </li>
-				<li> <a href=""> ddd </a> </li>
-				<li> <a href=""> ddd </a> </li>
-			</ul>
-					
+			<a name="faq"/>
+			<div id="faq">
+
+				<h1> FAQ </h1>
+				
+				<h4> Who Are We? </h4>
+				<p> The DEFCON 201 (or DC201) Group is a gathering point for folks interested in the alternate applications of modern technology, referred to properly as 'hacking'. </p> 
+				<p> Our mission is to help you learn new things, meet new people, mentor others in areas you may be strong in, and provide some cohesion within the hacker culture and it's members in the general New Jersey area. </p>
+
+				<h4> Do I have to be a "Hacker" to Attend? </h4>
+				<p> Our DC201 SIG(Special Interest Group) meetings are designed to attract not only hackers but members of various technology communities and people who want to learn more about Hacking but do not consider themselves hackers. The purpose here is to interact with people who may have different backgrounds but share the same passion for technology. </p>
+
+				<h4> Do I Have To Be "1337" to Attend? </h4>
+				<p> The DEFCON 201 SIG meetings are open to anyone, regardless of their skill, age, job, gender, etc. </p>
+
+				<h4> What are the meeting rules? </h4>
+				<p>
+					"Don't Be A Jerk"
+					"Be open to learning new skills or perfecting/teaching old ones"
+					"Be willing to either start a project or help someone with their own."
+				</p>
+
+				<h4> What Separates DC201 From Other Tech Meet Ups? </h4>
+				<p> DEFCON 201 lives in harmony with other hacker, maker and tech organizations in the New Jersey/New York Tri-State Area. In fact, two of our founders are long time regulars at the NYC 2600 group. We welcome those from said groups to check us out as our goals is to be an active, hands-on project-building group whose members bring in idea that we help create them into reality. </p>
+	 
+				<h4> What qualifies as a "Project"? </h4>
+				<p> A Project is anything that uses a constructive (or destructive) skill to build something over time. This can be something in physical meat space such as circuit building, radio frequencies, clothing creation, robotics and physical locks to virtual/conceptual pieces such as computer programming, NetOps, InfoSec, virtualization, Red/Blue Team Drills, Data Mining and more. </p> 
+				<p> In short, as long as you have an idea that you want to create into a realistic tangible result, please bring it and our members will try to bring it to fruition with the tools and resources of the fine folks at MakerBar! </p>
+
+				<h4> Can I attend if I only want to meet people? </h4>
+				<p> We understand if people feel overwhelmed by the idea of working on projects. If you want to show up to socialize, you are more than welcome to but to get the full experience of our group you can use your social skills to help out with projects and DC201. NEVER think that you are useless, everyone has a skill in something and if you want to learn new ones, we are more than happy to teach you. We are also looking into pure social gatherings in the near future and host short talks on various STEM subjects. </p>
+
+				<h4> When is DEFCON 201? </h4> 
+				<p> DC201 is located at the amazing MakerBar in Hoboken, New Jersey. We always meet during the third weekend of every month. Dates change depending on the organizers job schedule so please check our websites, social media and MakerBar for the exact day.
+			</div>	
 	
 			<h1> Contact </h1>
 

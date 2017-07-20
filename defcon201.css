@@ -1,11 +1,26 @@
+@font-face {
+
+	font-family: "stencam";
+	src: url("fonts/stencam.ttf") format('ttf');
+	font-weight: bold;
+}
+
 body {
 
 	background-color: #000000;
-	color: #FFF;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+h1,h2,h3,h4,h5,h6 {
+
+	font-family: "stencam";
+	font-weight: bold;
 }
 
 #body_col {
 
+	text-align: left;
 	max-width: 900px;
 	margin: 0px auto;
 	padding: 20px;
@@ -26,17 +41,21 @@ body {
 	margin: 0px;
 	border: 1px dashed #FFFFFF;
 	color: #FFFFFF;
+	font-size: 150%;
 }
 
-#thecarousel .welcome {
+#thecarousel .welcome,
+#thecarousel .bannerslide {
 
 	width: 95%;
-	height: 50vh;
-	margin: 0px;
+	height: 70vh;
+	margin: 0px 0px 0px 15px;
 	padding: 15px;
 	background-color: #000000;
 	border: 1px solid #FFFFFF;
 }
+
+.bannerslide { background: url("img/dc201logo.png") #FFF center/75% no-repeat; }
 
 .welcome .logo { float: left; }
 
@@ -47,6 +66,8 @@ body {
 	margin: 0px 30px;
 	font-size: 175%;
 }
+
+#faq { text-align: justify; }
 
 /* PRINT VERSION */
 @media print {
