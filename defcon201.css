@@ -192,6 +192,58 @@ h3,h4,h5,h6 {
 	margin: 0px 0px 0px auto !important;
 }
 
+.logo_half_holder {
+
+	width: 49%;
+	display: inline-block;
+}
+
+.affiliates .cool_logo_half {
+
+	display: inline;
+	max-width: 30%;
+	max-height: 200px;
+	width: auto;
+	height: auto;
+	margin-right: 2%;
+}
+
+.affiliates .cool_logo_dbl,
+.affiliates .cool_logo_bd {
+
+	display: inline;
+	max-width: 100%;
+	max-height: 200px;
+	width: auto;
+	height: auto;
+	margin: 0px 0px 10px 0px;
+}
+
+.affiliates .cool_logo_dbl { max-width: 60%; }
+
+.affiliates .cool_logo_bd { width: 60%; }
+
+.affiliates .dbl_holder {
+
+	text-align: center;
+	position: relative;
+	top: 45px;
+}
+
+.affiliates .bd_holder {
+
+	display: inline-block;
+	width: 50%;
+	margin: 0px 20px 0px -20px;
+}
+
+.affiliates .bd_holder img { margin: 0px; }
+
+#dcg_logo {
+
+	position: relative;
+	top: -50px;
+}
 
 /* PRINT VERSION */
 @media print {
