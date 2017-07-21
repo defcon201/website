@@ -7,6 +7,7 @@
 		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="defcon201.css">
+		<link rel="stylesheet" type="text/css" href="css/hover.css">
 		<link rel="stylesheet" type="text/css" href="slick/slick.css">
 		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
 
@@ -41,10 +42,22 @@
 					slidesToScroll: 1,
 					arrows: true,
 					fade: false,
-					autoplaySpeed: 5000
+					autoplaySpeed: 5000,
+					prevArrow: "<button type='button' class='slick-next'>&lt;&lt;</button>",
+					nextArrow: "<button type='button' class='slick-next'>&gt;&gt;</button>"
 				} );
 
-				$( "#faq" ).accordion();
+				$( ".accordion" ).accordion( { heightStyle: "content",
+								collapsible: true,
+								active: false,
+								animate: { easing: "easeOutQuart",
+								    duration: 600 } } );
+
+				$( "a[href*=\\#]" ).click( function( ev ) {
+
+					ev.preventDefault();
+					$( "html, body" ).animate( {scrollTop: $(this.hash).offset().top}, 1750, "easeOutQuart" );	
+				} );
 
 			} );	
 
@@ -53,14 +66,6 @@
 	</head>
 
 	<body>
-
-		<ul id="nav">
-			<li> <a href="#info"> Info </a> </li>
-			<li> <a href="#faq"> FAQ </a> </li>
-			<li> <a href="#contact"> Contact </a> </li>
-			<li> <a href="#affiliates"> Affiliates </a> </li>
-			<li> <a href="#members"> Members </a> </li>
-		</ul>
 
 		<div id="body_col">
 
@@ -125,61 +130,148 @@
 					</div>
 				</div>
 			</div>	
-		
-			<h1> Info </h1>
 
-			<p>
+			<ul id="nav">
+				<li> <a href="#info"> Info </a> </li>
+				<li> <a href="#faq"> FAQ </a> </li>
+				<li> <a href="#contact"> Contact </a> </li>
+				<li> <a href="#affiliates"> Affiliates </a> </li>
+				<li> <a href="#members"> Members </a> </li>
+			</ul>
+	
+			<div class="region_box">
+	
+				<h1> Info </h1>
 
-				<a target="_blank" href="http://www.makerbar.com">
+				<h3> Directions </h3>
 
-					<img title="MakerBar Logo" alt="MakerBar.com" src="http://defcon201.org/MakerBar_Clear.PNG">
-
-				</a>
-
-				<iframe scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-74.04279291629793%2C40.7370391238333%2C-74.04073297977449%2C40.738213808083344&amp;layer=mapnik" style="border: 1px solid black" frameborder="0" height="350" width="425"></iframe>
-
-			</p>
-
-			<h3> Directions </h3>
-
-
-			<a name="faq"/>
-			<div id="faq">
-
-				<h1> FAQ </h1>
-				
-				<h4> Who Are We? </h4>
-				<p> The DEFCON 201 (or DC201) Group is a gathering point for folks interested in the alternate applications of modern technology, referred to properly as 'hacking'. </p> 
-				<p> Our mission is to help you learn new things, meet new people, mentor others in areas you may be strong in, and provide some cohesion within the hacker culture and it's members in the general New Jersey area. </p>
-
-				<h4> Do I have to be a "Hacker" to Attend? </h4>
-				<p> Our DC201 SIG(Special Interest Group) meetings are designed to attract not only hackers but members of various technology communities and people who want to learn more about Hacking but do not consider themselves hackers. The purpose here is to interact with people who may have different backgrounds but share the same passion for technology. </p>
-
-				<h4> Do I Have To Be "1337" to Attend? </h4>
-				<p> The DEFCON 201 SIG meetings are open to anyone, regardless of their skill, age, job, gender, etc. </p>
-
-				<h4> What are the meeting rules? </h4>
 				<p>
-					"Don't Be A Jerk"
-					"Be open to learning new skills or perfecting/teaching old ones"
-					"Be willing to either start a project or help someone with their own."
+
+					<a id="mblogo" target="_blank" href="http://www.makerbar.com">
+
+						<img title="MakerBar Logo" alt="MakerBar.com" src="http://defcon201.org/MakerBar_Clear.PNG">
+
+					</a>
+
+					<p id="dir_text">
+
+							Makerbar <br />
+							38 Jackson St, Hoboken NJ
+							<br /><br />	
+							Convenient by train, bus, car, and ferry, at this point in time our meetings are typically at the Makerbar hackerspace in Hoboken.
+
+
+						<div class="accordion">
+
+							<h4> Coming from NYC via Path train </h4>
+							<div>
+
+								The Path train runs between Manhattan and Hudson County 24/7, with stops on the NYC side at 34th, 23rd, 14th, 9th streets along 6th Ave, Christopher st in the east village, and the World Trade Center. The correct trains will say "HOB" in illuminated letters above the train door. Once there, follow the rest of the directions under "From Hoboken terminal".
+								
+								<img src="https://www.panynj.gov/photo/path/PATH-System-Route-Maps-122216-sm.jpg" />
+							</div>
+
+							<h4> From elsewhere in NJ by train </h4>
+							<div>
+								NJTransit provides the most appropriate option if coming from another part of Jersey via public transportation. You may have to transfer at Newark Penn, Newark Broad st, or Seacaucus Junction - depending on your starting point - to ensure you go to Hoboken instead of New York Penn Station. Trains run until around 1am. Follow the rest of the directions under "From Hoboken terminal" once there.
+
+								<img src="img/njtransitcrop.jpg" />
+							</div>
+
+							<h4> From Hoboken terminal </h4>
+							<div>
+								The last leg of the trip's either a quick $5 cab ride or 10-15 minute walk. Cabs line up towards the end of the street the station runs along (Hudson Pl.) and will sometimes take several people to different drop-off points.
+
+								If walking, exit the station turning left on Hudson Pl., make another left onto Hudson St, and then a right onto Observer Highway. Eventually you'll make a left onto Jackson St until you find #38 with the black double doors.  
+							</div>
+
+							<h4> By car </h4>
+							<div>
+								Whether coming from NYC or elsehwere in NJ, Makerbar is located right next to the Holland Tunnel, The NJ Turnpike, and a short ways away from the Lincoln Tunnel.
+							</div>
+						</div>
+					</p>
+
+					<iframe scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-74.04489040374757%2C40.73117758658475%2C-74.02845382690431%2C40.74130690856319&amp;layer=mapnik&amp;marker=40.736242440357856%2C-74.03667211532593" style="border: 1px solid black" frameborder="0" height="300" width="100%"></iframe>
+
 				</p>
 
-				<h4> What Separates DC201 From Other Tech Meet Ups? </h4>
-				<p> DEFCON 201 lives in harmony with other hacker, maker and tech organizations in the New Jersey/New York Tri-State Area. In fact, two of our founders are long time regulars at the NYC 2600 group. We welcome those from said groups to check us out as our goals is to be an active, hands-on project-building group whose members bring in idea that we help create them into reality. </p>
-	 
-				<h4> What qualifies as a "Project"? </h4>
-				<p> A Project is anything that uses a constructive (or destructive) skill to build something over time. This can be something in physical meat space such as circuit building, radio frequencies, clothing creation, robotics and physical locks to virtual/conceptual pieces such as computer programming, NetOps, InfoSec, virtualization, Red/Blue Team Drills, Data Mining and more. </p> 
-				<p> In short, as long as you have an idea that you want to create into a realistic tangible result, please bring it and our members will try to bring it to fruition with the tools and resources of the fine folks at MakerBar! </p>
+			
+			</div>
 
-				<h4> Can I attend if I only want to meet people? </h4>
-				<p> We understand if people feel overwhelmed by the idea of working on projects. If you want to show up to socialize, you are more than welcome to but to get the full experience of our group you can use your social skills to help out with projects and DC201. NEVER think that you are useless, everyone has a skill in something and if you want to learn new ones, we are more than happy to teach you. We are also looking into pure social gatherings in the near future and host short talks on various STEM subjects. </p>
-
-				<h4> When is DEFCON 201? </h4> 
-				<p> DC201 is located at the amazing MakerBar in Hoboken, New Jersey. We always meet during the third weekend of every month. Dates change depending on the organizers job schedule so please check our websites, social media and MakerBar for the exact day.
-			</div>	
+			<div class="region_box info">
 	
-			<h1> Contact </h1>
+				<h1> FAQ </h1>
+
+				<a name="faq"/>
+				<div id="faq" class="accordion">
+
+					<h4> Who Are We? </h4>
+					<div>
+
+						<p> The DEFCON 201 (or DC201) Group is a gathering point for folks interested in the alternate applications of modern technology, referred to properly as 'hacking'. <br /> 
+						Our mission is to help you learn new things, meet new people, mentor others in areas you may be strong in, and provide some cohesion within the hacker culture and it's members in the general New Jersey area. </p>
+					</div>
+
+					<h4> Do I have to be a "1337 Hacker" to Attend? </h4>
+					<div>
+						<p> Our DC201 SIG(Special Interest Group) meetings are designed to attract not only hackers but members of various technology communities and people who want to learn more about Hacking but do not consider themselves hackers. We're open to anyone regardless of their skill, age, job, gender, etc. The purpose here is to interact with people who may have different backgrounds but share the same passion for technology. </p>
+					</div>
+
+					<h4> What are the meeting rules? </h4>
+					<p>
+						"Don't Be A Jerk"
+						"Be open to learning new skills or perfecting/teaching old ones"
+						"Be willing to either start a project or help someone with their own."
+					</p>
+
+					<h4> What Separates DC201 From Other Tech Meet Ups? </h4>
+					<p> DEFCON 201 lives in harmony with other hacker, maker and tech organizations in the New Jersey/New York Tri-State Area. In fact, two of our founders are long time regulars at the NYC 2600 group. We welcome those from said groups to check us out as our goals is to be an active, hands-on project-building group whose members bring in idea that we help create them into reality. </p>
+	 
+					<h4> What qualifies as a "Project"? </h4>
+					<div>	
+						<p> A Project is the focused application of constructive and deconstructive skill to build something in physical and/or digital space; Ideas often within the themes of... 
+
+						<ul>
+							<li>circuit building & pcb design
+							<li>software defined radio
+							<li>social engineering
+							<li>osint
+							<li>physical locks
+							<li>programs & apps
+							<li>netops
+							<li>infosec
+							<li>robotics
+							<li>red/blue team drills
+							<li>data mining
+							<li>tailoring
+							<li>research
+							<li>advocacy
+							<li>law
+							<li>and much, much more
+						</ul>
+
+						<p> In short, as long as you have an idea that you want to create into a realistic tangible result, please bring it and our members will try to bring it to fruition with the tools and resources at our disposal! </p>
+
+					</div>
+
+					<h4> Can I attend if I only want to meet people? </h4>
+					<p> We understand if people feel overwhelmed by the idea of working on projects. If you want to show up to socialize, you are more than welcome to but to get the full experience of our group you can use your social skills to help out with projects and DC201. NEVER think that you are useless, everyone has a skill in something and if you want to learn new ones, we are more than happy to teach you. We are also looking into pure social gatherings in the near future and host short talks on various STEM subjects. </p>
+
+					<h4> When is DEFCON 201? </h4> 
+					<p> DC201 is located at the amazing MakerBar in Hoboken, New Jersey. We always meet during the third weekend of every month. Dates change depending on the organizers job schedule so please check our websites, social media and MakerBar for the exact day.</p>
+
+					
+				</div>	
+			</div>	
+
+			<div class="region_box">	
+
+				<h1> Contact </h1>
+
+				<a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/defcon201nj">Tweets by defcon201nj</a>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
 
 			<h1> Affiliates </h1>
 

@@ -1,7 +1,7 @@
 @font-face {
 
 	font-family: "stencam";
-	src: url("fonts/stencam.ttf") format('ttf');
+	src: url("fonts/stencam.ttf");
 	font-weight: bold;
 }
 
@@ -10,11 +10,18 @@ body {
 	background-color: #000000;
 	color: #FFFFFF;
 	text-align: center;
+	font-family: Helvetica;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2 {
 
-	font-family: "stencam";
+	font-family: Impact;
+	font-weight: 400;
+}
+
+h3,h4,h5,h6 {
+
+	font-family: Verdana;
 	font-weight: bold;
 }
 
@@ -24,14 +31,26 @@ h1,h2,h3,h4,h5,h6 {
 	max-width: 900px;
 	margin: 0px auto;
 	padding: 20px;
+	text-align: center;
 	/* background-color: blue; */
+}
+
+.region_box {
+
+	border: 1px solid #484848;
+
+	padding: 15px;
+	margin: 10px auto;
+
+	-webkit-border-radius: 12px; 
+	-moz-border-radius: 12px; 
+	border-radius: 12px;
 }
 
 #nav {
 
-	margin: 20px auto;
+	margin: 10vh auto;
 	padding: 0px;
-	width: 40%;
 }
 
 #nav li {
@@ -39,9 +58,58 @@ h1,h2,h3,h4,h5,h6 {
 	display: inline;
 	padding: 0px 10px;
 	margin: 0px;
-	border: 1px dashed #FFFFFF;
 	color: #FFFFFF;
-	font-size: 150%;
+	font-size: 90%;
+	font-family: helvetica;
+	text-transform: lowercase;
+}
+
+/* Interactive nav link stylings */
+
+#nav li a { position: relative; }
+
+#nav li a:link, #nav li a:visited {
+
+	border: none;
+	text-decoration: none;
+	font-style: normal;
+	color: #808080;
+	transition: color 0.5s ease;
+}
+
+#nav li a:link:before {
+
+	content: "";
+	left: 0px;
+	transition: left 0.5s ease;
+}	
+
+#nav li a:link:after {
+
+	content: "";
+	right: 0px;
+	transition: right 0.5s ease;
+}
+	
+#nav li a:hover {
+
+	color: #FFFFFF;
+}
+
+#nav li a:hover:before {
+
+	content: "[";
+	width: 0px;
+	position: absolute;
+	left: -10px;
+}
+
+#nav li a:hover:after {
+
+	content: "]";
+	width: 0px;
+	position: absolute;
+	right: -5px;
 }
 
 #thecarousel .welcome,
@@ -52,7 +120,11 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 0px 0px 0px 15px;
 	padding: 15px;
 	background-color: #000000;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #484848;
+
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
 }
 
 .bannerslide { background: url("img/dc201logo.png") #FFF center/75% no-repeat; }
@@ -67,7 +139,59 @@ h1,h2,h3,h4,h5,h6 {
 	font-size: 175%;
 }
 
+
+#mblogo { float: right; }
+
+#dir_text {
+	
+	display: block;
+	width: 50%;
+	text-align: left;
+}
+
 #faq { text-align: justify; }
+
+.accordion { text-align: left; }
+
+.info .accordion img { margin: 10px auto 10px auto; }
+
+#faq .ui-accordion-content,
+#faq .ui-accordion-content p {
+
+	margin: 0px auto;
+	padding-top: 10px;
+}
+
+#faq h3,h4 {
+
+	margin: 20px auto 0px auto;
+}
+
+/* Twitter Embedded Timeline */
+
+.twitter-timeline {
+
+	/* Buttonish */
+	display: block;
+	padding: 6px 12px 6px 30px;
+	margin: 10px 0;
+	border: #ccc solid 1px;
+	border-radius: 3px;
+
+	/* Text */
+	font: normal 50%/75% Helvetica, Arial, sans-serif;
+	color: #333;
+	white-space: nowrap;
+}
+
+.twitter-timeline,
+#twitter-widget-0 {
+	
+	display: block !important;
+	width: 25% !important;
+	margin: 0px 0px 0px auto !important;
+}
+
 
 /* PRINT VERSION */
 @media print {
