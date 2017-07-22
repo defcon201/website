@@ -13,10 +13,31 @@
 
 		<script>
 
-			function buildMeetSlides( eventList ) {
+			newSlidesMarkup = "";
 
-				//
+			function buildMeetContent( eventList ) {
+
+				var agendaStart = ".::AGENDA &AMP; SCHEDULE::.",
+				    agendaEnd = "END OF OFFICIAL MEET UP";
+
+				var newAgendaMarkup = "";
+
+				_.each( eventList, function( evt, ei ) {
+
+					newSlidesMarkup += "<div class='welcome'>"
+					newSlidesMarkup += "<h1> Next Meeting </h1>";
+					newSlidesMarkup += "<h3>" + evt.name + "</h3>";
+					newAgendaMarkup += "<h3>" + (new Date(evt.time)).toLocaleDateString(); + "</h3>";
+
+					var lcaseDesc = evt.description.toUpperCase();	
+					var start = lcaseDesc.indexOf( agendaStart ),
+					    end = lcaseDesc.indexOf( agendaEnd );
+ 
+					newSlidesMarkup += "<div class='meeting_slide'> Meeting Agenda <br />" + evt.description.substring( start + agendaStart.length, end ) + "</div>";
+					newSlidesMarkup += "</div>";
+				} );
 			}
+
 
 			function pullMeetups( data ) {
 
@@ -28,10 +49,13 @@
 						defconMeetups.push( evt );
 				} );
 
-				buildMeetSlides( defconMeetups );
+				buildMeetContent( defconMeetups );
 			}
 
 			$( document ).ready( function() {
+
+				if ( newSlidesMarkup.length > 0 )
+					$( "#thecarousel #logoslide" ).after( newSlidesMarkup );
 
 				$( '#thecarousel' ).slick( {
 					accessibility: true,
@@ -42,9 +66,7 @@
 					slidesToScroll: 1,
 					arrows: true,
 					fade: false,
-					autoplaySpeed: 5000,
-					prevArrow: "<button type='button' class='slick-next'>&lt;&lt;</button>",
-					nextArrow: "<button type='button' class='slick-next'>&gt;&gt;</button>"
+					autoplaySpeed: 5000
 				} );
 
 				$( ".accordion" ).accordion( { heightStyle: "content",
@@ -71,41 +93,14 @@
 
 			<div id="thecarousel">
 
-				<div class="bannerslide">
+				<div id="logoslide" class="bannerslide">
 
 					
 				</div>
 
 				<div class="welcome">
 
-					<img class="logo" src="http://defcon201.org/DEFCON201_Logo_inVert.JPG" width="250" height="175">
-
-					<div class="next_info">
-
-						Welcome To Defcon201 <br>
-
-					</div>
-				</div>
-
-				<div class="welcome">
-
 					<h1> R00TZ </h1>
-				</div>
-
-				<div class="welcome">
-
-					<img class="logo" src="http://defcon201.org/MakerBar_Clear.PNG" width="250" height="250">
-
-					<div class="next_info">
-
-						Next Meeting: <br>
-
-						July 21st @ Makerbar <br>
-
-						<a href="https://www.meetup.com/MakerBar/events/240949742/" tabindex="-1">
-							Pre-Defcon Planning
-						</a>
-					</div>
 				</div>
 
 				<div class="welcome">
@@ -118,17 +113,6 @@
 
 					<h1> R00TZ </h1>
 				</div>
-
-				<div class="welcome">
-
-					<img class="logo" src="http://defcon201.org/DEFCON201_Logo_inVert.JPG" width="250" height="175">
-
-					<div class="next_info">
-
-						Welcome To Defcon201 <br>
-
-					</div>
-				</div>
 			</div>	
 
 			<ul id="nav">
@@ -138,10 +122,15 @@
 				<li> <a href="#affiliates"> Affiliates </a> </li>
 				<li> <a href="#members"> Members </a> </li>
 			</ul>
+
+			<a name="info" id="info">
 	
 			<div class="region_box">
 	
 				<h1> Info </h1>
+
+				<h3> Next Meeting </h3>
+
 
 				<h3> Directions </h3>
 
@@ -194,17 +183,16 @@
 
 					<iframe scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-74.04489040374757%2C40.73117758658475%2C-74.02845382690431%2C40.74130690856319&amp;layer=mapnik&amp;marker=40.736242440357856%2C-74.03667211532593" style="border: 1px solid black" frameborder="0" height="300" width="100%"></iframe>
 
-				</p>
-
-			
+				</p>			
 			</div>
 
-			<div class="region_box info">
+			<a name="faq"/>
+
+			<div id="faq" class="region_box info">
 	
 				<h1> FAQ </h1>
 
-				<a name="faq"/>
-				<div id="faq" class="accordion">
+				<div class="faq_box accordion">
 
 					<h4> Who Are We? </h4>
 					<div>
@@ -265,6 +253,8 @@
 				</div>	
 			</div>	
 
+			<a name="contact" id="contact">
+
 			<div class="region_box">	
 
 				<h1> Contact </h1>
@@ -273,7 +263,9 @@
 				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 
-			<div class="region_box affiliates">
+			<a name="affiliates" />
+
+			<div class="region_box" id="affiliates">
 
 				<h1> Affiliates & Sponsors </h1>
 
@@ -359,9 +351,13 @@
 				</div>
 			</div>
 
+			<a name="members" id="members">
+
 			<div class="region_box">
 
 				<h1> Members </h1>
+
+				<p> Coming soon. </p>
 			</div>
 		</div>
 		

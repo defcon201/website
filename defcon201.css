@@ -139,6 +139,15 @@ h3,h4,h5,h6 {
 	font-size: 175%;
 }
 
+.meeting_slide { text-align: left; }
+
+.meeting_slide p {
+
+	margin: 0px auto;
+	font-size: 80%;
+}
+
+.meeting_slide p:nth-child(odd) { margin: 0px auto 8px auto; }
 
 #mblogo { float: right; }
 
@@ -149,7 +158,7 @@ h3,h4,h5,h6 {
 	text-align: left;
 }
 
-#faq { text-align: justify; }
+.faq_box { text-align: justify; }
 
 .accordion { text-align: left; }
 
@@ -198,7 +207,7 @@ h3,h4,h5,h6 {
 	display: inline-block;
 }
 
-.affiliates .cool_logo_half {
+#affiliates .cool_logo_half {
 
 	display: inline;
 	max-width: 30%;
@@ -208,8 +217,8 @@ h3,h4,h5,h6 {
 	margin-right: 2%;
 }
 
-.affiliates .cool_logo_dbl,
-.affiliates .cool_logo_bd {
+#affiliates .cool_logo_dbl,
+#affiliates .cool_logo_bd {
 
 	display: inline;
 	max-width: 100%;
@@ -219,25 +228,25 @@ h3,h4,h5,h6 {
 	margin: 0px 0px 10px 0px;
 }
 
-.affiliates .cool_logo_dbl { max-width: 60%; }
+#affiliates .cool_logo_dbl { max-width: 60%; }
 
-.affiliates .cool_logo_bd { width: 60%; }
+#affiliates .cool_logo_bd { width: 60%; }
 
-.affiliates .dbl_holder {
+#affiliates .dbl_holder {
 
 	text-align: center;
 	position: relative;
 	top: 45px;
 }
 
-.affiliates .bd_holder {
+#affiliates .bd_holder {
 
 	display: inline-block;
 	width: 50%;
 	margin: 0px 20px 0px -20px;
 }
 
-.affiliates .bd_holder img { margin: 0px; }
+#affiliates .bd_holder img { margin: 0px; }
 
 #dcg_logo {
 
