@@ -18,7 +18,7 @@
 			function buildMeetContent( eventList ) {
 
 				var agendaStart = ".::AGENDA &AMP; SCHEDULE::.",
-				    agendaEnd = "END OF OFFICIAL MEET UP";
+					agendaEnd = "END OF OFFICIAL MEET UP";
 
 				var newAgendaMarkup = "";
 
@@ -31,7 +31,7 @@
 
 					var lcaseDesc = evt.description.toUpperCase();	
 					var start = lcaseDesc.indexOf( agendaStart ),
-					    end = lcaseDesc.indexOf( agendaEnd );
+						end = lcaseDesc.indexOf( agendaEnd );
  
 					newSlidesMarkup += "<div class='meeting_slide'> Meeting Agenda <br />" + evt.description.substring( start + agendaStart.length, end ) + "</div>";
 					newSlidesMarkup += "</div>";
@@ -73,7 +73,7 @@
 								collapsible: true,
 								active: false,
 								animate: { easing: "easeOutQuart",
-								    duration: 600 } } );
+									duration: 600 } } );
 
 				$( "a[href*=\\#]" ).click( function( ev ) {
 
@@ -258,16 +258,43 @@
 			<div class="region_box">	
 
 				<h1> Contact </h1>
+				<div class="socials">
+					<a target="_blank" href="https://www.facebook.com/groups/1743426829004414/">
+						<img class="social" src="img/social/facebook.png" alt="facebook">
+					</a>
+					<a target="_blank" href="https://twitter.com/defcon201nj">
+						<img class="social" src="img/social/twitter.png" alt="twitter">
+					</a>
+					<a target="_blank" href="https://quitter.no/defcon201">
+						<img class="social" src="img/social/gnusocial.svg" alt="GNU social">
+					</a>
+					<a target="_blank" href="https://hostux.social/@defcon201">
+						<img class="social" src="img/social/mastodon.png" alt="mastadon">
+					</a>
+					<a target="_blank" href="ircs://chat.freenode.net/defcon201:6697">
+						<img class="social" src="img/social/freenode.png" alt="IRC (freenode)">
+					</a>
+					<a target="_blank" href="https://github.com/defcon201">
+						<img class="social" src="img/social/github.png" alt="github">
+					</a>
+					<a target="_blank" href="https://hackaday.io/defcon201">
+						<img class="social" src="img/social/hackaday.svg" alt="hackaday group">
+					</a>
+					<a target="_blank" href="https://forum.defcon.org/forum/general-area/defcon-group-forums-and-or-links/u-s-defcon-group-forums-and-or-links/dc201-hoboken-nj">
+						<img class="social" src="img/social/defcon.png" alt="defcon forum">
+					</a>
+				</div>
 
 				<a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/defcon201nj">Tweets by defcon201nj</a>
 				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				<div style="clear: both"></div>
 			</div>
 
 			<a name="affiliates" />
 
 			<div class="region_box" id="affiliates">
 
-				<h1> Affiliates & Sponsors </h1>
+				<h1> Affiliates &amp; Sponsors </h1>
 
 				<div class="bd_holder">
 

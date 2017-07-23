@@ -176,6 +176,17 @@ h3,h4,h5,h6 {
 	margin: 20px auto 0px auto;
 }
 
+div.socials {
+	float: left;
+	
+	width: 75%;
+}
+
+img.social {
+	width: 20%;
+	margin: 5%;
+}
+
 /* Twitter Embedded Timeline */
 
 .twitter-timeline {
