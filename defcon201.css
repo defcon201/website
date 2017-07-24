@@ -166,9 +166,22 @@ div.crypto_hold {
 
 .faq_box { text-align: justify; }
 
+.direction_acc .ui-accordion-content ,
+.direction_acc .ui-accordion-content img { padding-top: 15px; }
+
 .accordion { text-align: left; }
 
 .info .accordion img { margin: 10px auto 10px auto; }
+
+.ui-accordion-header:before {
+
+	content: "\25B6";
+}
+
+.ui-accordion-header-active:before {
+
+	content: "\25BC";
+}
 
 #faq .ui-accordion-content,
 #faq .ui-accordion-content p {
