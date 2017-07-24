@@ -49,8 +49,21 @@ h3,h4,h5,h6 {
 
 #nav {
 
-	margin: 10vh auto;
-	padding: 0px;
+	margin: 0px auto;
+	padding: 4vh 0px;
+	background-color: #000;
+}
+
+#nav.stuck {
+
+	display: block;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	margin: 0px auto;
+	padding: 15px 0px;
+	border-bottom: 1px #FFF solid;
 }
 
 #nav li {
@@ -133,7 +146,16 @@ div.crypto_hold {
 	display: inline-block;
 }
 
-.bannerslide { background: url("img/dc201logo.png") #FFF center/75% no-repeat; }
+.bannerslide { background: url("img/dc201logo.png") #FFF center/95% no-repeat; }
+#rootzslide { background: url("img/rootzday.png") #FFF center/50% no-repeat; }
+
+.dumb_link {
+
+	display: block;
+	opacity: 0;
+	position: relative;
+	height: 100%;
+}
 
 .welcome .logo { float: left; }
 
@@ -196,9 +218,16 @@ div.crypto_hold {
 }
 
 div.socials {
-	float: left;
-	
+
+	float: left;	
 	width: 75%;
+}
+
+div#affiliates a,
+div.socials a {
+
+	border-width: 0px;
+	text-decoration: none;
 }
 
 img.social {

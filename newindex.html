@@ -2,13 +2,14 @@
 
 	<head>
 
+		<title> DEFCON 201 - Dirty Jersey Represent </title>
+
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>	
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="defcon201.css">
-		<link rel="stylesheet" type="text/css" href="css/hover.css">
 		<link rel="stylesheet" type="text/css" href="slick/slick.css">
 		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
 
@@ -22,6 +23,23 @@
 					agendaEnd = "END OF OFFICIAL MEET UP";
 
 				var newAgendaMarkup = "";
+
+				if ( eventList.length == 0 ) {
+
+					$(".next_meeting").css("display","none");
+
+				} else {
+
+					var evt = eventList[ 0 ];
+
+					var lcaseDesc = evt.description.toUpperCase();	
+					var start = lcaseDesc.indexOf( agendaStart ),
+					    end = lcaseDesc.indexOf( agendaEnd );
+
+					var theAgenda = evt.description.substring( start + agendaStart.length, end );
+					
+					$(".next_meting").after( $("<p>"+theAgenda+"</p>") );
+				}
 
 				_.each( eventList, function( evt, ei ) {
 
@@ -53,6 +71,25 @@
 				buildMeetContent( defconMeetups );
 			}
 
+			function setupStuckMenu() {
+
+				var initYPlace = $('#nav').offset().top;
+
+				var yOffset = 25;
+
+				$(window).scroll(function(){
+
+					if ( $( window ).scrollTop() > initYPlace + yOffset ) {
+
+						$('#nav').addClass( "stuck" );
+
+					} else {
+
+						$('#nav').removeClass( "stuck" );
+					}
+        			});
+			}
+
 			$( document ).ready( function() {
 
 				if ( newSlidesMarkup.length > 0 )
@@ -82,6 +119,8 @@
 					$( "html, body" ).animate( {scrollTop: $(this.hash).offset().top}, 1750, "easeOutQuart" );	
 				} );
 
+				setupStuckMenu();
+
 			} );	
 
 		</script>
@@ -96,7 +135,6 @@
 
 				<div id="logoslide" class="bannerslide">
 
-					
 				</div>
 
 				<div class="welcome">
@@ -105,9 +143,8 @@
 
 				</div>
 
-				<div class="welcome">
-
-					<h1> R00TZ </h1>
+				<div id="rootzslide" class="welcome">
+					<a class="dumb_link" target="_NEW" href="https://www.eventbrite.com/e/r00tz-day-kids-hacking-art-newark-museum-a-defcon-201-event-registration-36422153642">.</a>
 				</div>
 
 				<div class="welcome crypto">
@@ -165,7 +202,7 @@
 	
 				<h1> Info </h1>
 
-				<h3> Next Meeting </h3>
+				<h3 class="next_meeting"> Next Meeting </h3>
 
 
 				<h3> Directions </h3>
@@ -420,7 +457,29 @@
 
 				<h1> Members </h1>
 
-				<p> Coming soon. </p>
+				<p> Member roster Coming soon, but for now... </p>
+
+				<h4> Pukingmonkey </h4>
+
+				<iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/T43Ti7c11lY"
+  frameborder="0"></iframe>
+
+				<h4> Mrglass </h4>
+
+				<iframe id="ytplayerb" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/_3jtE7vQ6n8"
+  frameborder="0"></iframe>
+
+				<h4> xlogicx </h4>
+				
+				<iframe id="ytplayerc" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/Hbih2lG2v0s"
+  frameborder="0"></iframe>
+				
+				<iframe id="ytplayerc" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/79Lhcz_xv2k"
+  frameborder="0"></iframe>
 			</div>
 		</div>
 		
