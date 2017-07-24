@@ -127,6 +127,12 @@ h3,h4,h5,h6 {
 	-webkit-border-radius: 15px;
 }
 
+div.crypto_hold {
+
+	width: 49%;
+	display: inline-block;
+}
+
 .bannerslide { background: url("img/dc201logo.png") #FFF center/75% no-repeat; }
 
 .welcome .logo { float: left; }
