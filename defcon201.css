@@ -47,6 +47,8 @@ h3,h4,h5,h6 {
 	border-radius: 12px;
 }
 
+.coinmarketcap-currency-widget div:nth-child(1) { border-color: #2F4F4F !important; }
+
 #nav {
 
 	margin: 0px auto;
@@ -67,7 +69,6 @@ h3,h4,h5,h6 {
 	border-bottom: 1px #FFF solid;
 }
 
-.coinmarketcap-currency-widget div:nth-child(1) { border-color: #2F4F4F !important; }
 
 #nav li {
 
@@ -350,7 +351,6 @@ img.social {
 
 	max-width: 640px;
 	width: 100%;
-	height: auto;
 }
 
 /* PRINT VERSION */
@@ -363,17 +363,22 @@ img.social {
 
 	body {
 
-		margin: 0px;
+		margin: 15px 0px;
 		padding: 0px;
 	}
 
 	#body_col {
 		width: 85%;
-		margin: 0px;
 		padding: 0px;
 	}
 
 	#dir_text { width: 100%; }
+
+	#thecarousel {
+
+		position: relative;
+		left: -10px;
+	}
 	
 	div.crypto_hold {
 
@@ -420,6 +425,9 @@ img.social {
 	}
 
 	#affiliates .logo_half_holder.dbl_holder a { width: 100%; }
+
+	#members iframe,
+	#thecarousel iframe#ytplayer { height: auto; }
 }
 
 /* TABLET VERSION */
