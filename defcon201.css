@@ -379,6 +379,12 @@ img.social {
 		position: relative;
 		left: -10px;
 	}
+
+	.slick-prev {
+
+		z-index: 50;
+		left: -10px !important;
+	}
 	
 	div.crypto_hold {
 
