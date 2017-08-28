@@ -1,0 +1,25 @@
+As of August 28th 2017 here are a list of fixes and corrections that have yet to be done to the website.
+
+Short Term Corrections:
+
+-- SSL is screwed up for some reason, we need this to be 100% SSL approved.
+-- Menu Banner on Desktop needs to be made larger and move dto the very top of the page, perhaps a diffrent BG color?
+-- Arrow keys for routunda do not display correctly. UNICODE or Image fix?
+-- MakerBar logo does not load in correctly.
+-- Insert mention in Info section above location that we meet third friday of every month.
+-- Insert an tel:// section with MakerBar phone number.
+-- Insert "info [at] defcon201 (dot) org email to Contact section, maybe even make a contact forum via Email?
+-- Social Media logos in Contact section do not rotate, change the Quitter logo.
+-- Need to move EFA Logo from "Cool People" to "Afilliates".
+-- Add Code for Newark and AfroCROWD to "Cool People".
+-- Add Sidepocket's NOTACON talk to Talks from Members: 
+-- Add the Creative Commons Licence to the bottom of page.
+-- Run (and edit accordingly) website so it can be W3C Cert and have that logo at the bottom of page.
+-- Review finalized page and make edits so it is Blind Accessable Readable.
+
+Future Additions:
+
+-- Make a simple HTML version that auto loads when Our Fancy Coding Fails to Load.
+-- Create Terminal Readable Version of Website linked to the Menu of our Main One.
+-- Create WEP Version of Website linked to the Menu of our Main One.
+-- .onion mirror of our website for Tor Browsing
