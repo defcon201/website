@@ -35,6 +35,10 @@ h3,h4,h5,h6 {
 	/* background-color: blue; */
 }
 
+.ytplayer {
+	border:0;
+}
+
 .region_box {
 
 	border: 1px solid #484848;
