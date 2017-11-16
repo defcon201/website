@@ -159,30 +159,32 @@ div.crypto_hold {
 }
 
 .bannerslide { background: url("img/dc201logo.png") #FFF center/95% no-repeat; }
-#rootzslide { background: url("img/rootzday.png") #FFF center/50% no-repeat; }
 
-#rootzslide {
-  animation-duration: 20s;
+#contactinfo a.dumb_link {
+  animation-duration: 10s;
   animation-name: dollyin;
   animation-iteration-count: infinite;
 }
 
 @keyframes dollyin {
   from {
-	background-size: 20%;
+	font-size: 10pt;
   }
 
   to {
-	background-size: 60%;
+	font-size: 42pt;
   }
 }
 
 .dumb_link {
 
 	display: block;
-	opacity: 0;
 	position: relative;
-	height: 100%;
+	font-size: 24pt;
+	width: 100%;
+	top: 48%;
+	text-decoration: none;
+	font-family: Impact, Helvetica, sans-serif;
 }
 
 .welcome .logo { float: left; }
