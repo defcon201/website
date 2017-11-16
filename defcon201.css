@@ -15,13 +15,13 @@ body {
 
 h1,h2 {
 
-	font-family: Impact;
+	font-family: Impact, Helvetica, sans-serif;
 	font-weight: 400;
 }
 
 h3,h4,h5,h6 {
 
-	font-family: Verdana;
+	font-family: Verdana, Geneva, sans-serif;
 	font-weight: bold;
 }
 
